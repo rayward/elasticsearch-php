@@ -154,7 +154,7 @@ class Transport
         $this->lastConnection = $connection;
 
         try {
-            if (isset($body) === true) {
+            if (isset($body) === true && !is_resource($body)) {
                 $body = $this->serializer->serialize($body);
             }
 
